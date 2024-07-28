@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>A-Frame Particle System Component Example</title>
+  <meta name="description" content="Hello, World!">
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="/dist/aframe-particle-system-component.js"></script>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <div class="aframe-container">
+    <a-scene cursor="rayOrigin: mouse">
+      <a-entity id="camera" camera look-controls="pointerLockEnabled: true" wasd-controls="acceleration: 100"
+        position="0 1.6 2">
+        <a-entity id="player" geometry="primitive: box; height: 1.6; width: 0.5; depth: 0.5"
+          material="color: transparent"></a-entity>
+      </a-entity>
+
+      <a-entity position="0 2.25 -15" particle-system="preset: snow; particleCount: 5000"></a-entity>
+
+      <a-entity class="bottom-logos">
+          <a-entity id="bottomLogo1" class="logo" position="-1.5 2.5 -0.4" 
+            onclick="navigateTo('mailto:ye.gao@student.tdsb.on.ca')">
+            <a-image src="email.png" width="1" height="1" material="color: white"></a-image>
+          </a-entity>
+
+          <a-entity id="bottomLogo2" class="logo" position="0 2.5 -0.4" 
+            onclick="navigateTo('https://github.com/GaoYeGithub')">
+            <a-image src="git.png" width="1" height="1" material="color: white"></a-image>
+          </a-entity>
+      </a-entity>
+
+
+        <a-entity id="bottomLogo3" class="logo" position="1.5 2.5 -0.4"
+          onclick="navigateTo('https://www.linkedin.com/in/ye-gao-92824931b/')" target="_blank">
+          <a-image src="linkdein.png" width="1" height="1" material="color: white"></a-image>
+        </a-entity>
+      </a-entity>
+
+
+      <a-assets>
+        <a-asset-item id="glbtestmodel" src="room.glb">
+        </a-asset-item>
+      </a-assets>
+        <a-entity id="glbtest" gltf-model="#glbtestmodel" position="0 1 -2">
+      </a-entity>
+      <a-sky color="#000000"></a-sky>
+    </a-scene>
+  </div>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
